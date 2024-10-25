@@ -86,4 +86,9 @@ public class SubCmdMaintenance extends SubCommand {
     public String getPermission() {
         return "leap.maintenance";
     }
+
+    @Override
+    public boolean hasPermission(CommandSender sender, String[] args) {
+        return sender.hasPermission(getPermission() + "." + args[1]);
+    }
 }

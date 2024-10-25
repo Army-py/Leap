@@ -21,4 +21,6 @@ public abstract class SubCommand {
     public abstract List<String> onTabComplete(CommandSender sender, String[] args);
 
     public abstract String getPermission();
+
+    public abstract boolean hasPermission(CommandSender sender, String[] args);
 }

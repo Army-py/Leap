@@ -43,7 +43,7 @@ public class LeapCommand implements CommandExecutor, TabCompleter {
         if (subCommands.containsKey(args[0])) {
             final SubCommand subCmd = (SubCommand) subCommands.get(args[0]);
 
-            if (!sender.hasPermission(subCmd.getPermission())) {
+            if (!subCmd.hasPermission(sender, args)) {
                 sender.sendMessage(Messages.NO_PERMISSION.getMessage());
                 return true;
             }
