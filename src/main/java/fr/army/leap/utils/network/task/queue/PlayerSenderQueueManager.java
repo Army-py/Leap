@@ -49,6 +49,10 @@ public class PlayerSenderQueueManager {
         taskQueue.put(task);
     }
 
+    public void removePlayer(Player player) {
+        taskQueue.removeIf(dataSenderTask -> dataSenderTask.getPacket().getPlayer().getUniqueId().equals(player.getUniqueId()));
+    }
+
     public void shutdown() {
         executorService.shutdownNow();
         taskQueue.clear();

@@ -5,6 +5,7 @@ import fr.army.leap.config.Config;
 import fr.army.leap.utils.network.task.queue.PlayerSenderQueueManager;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -29,5 +30,9 @@ public class TaskSenderManager {
 
     public PlayerSenderQueueManager getPlayerSenderQueueManager(String serverName) {
         return playerSenderQueueManagerMap.get(serverName);
+    }
+
+    public Map<String, PlayerSenderQueueManager> getPlayerSenderQueueManagerMap() {
+        return playerSenderQueueManagerMap;
     }
 }
